@@ -1,9 +1,9 @@
 DROP SCHEMA "STI" CASCADE;
 
 CREATE SCHEMA "STI"
-AUTHORIZATION postgres;
+AUTHORIZATION stiuser;
 
-GRANT ALL ON SCHEMA "STI" TO stidb;
+GRANT ALL ON SCHEMA "STI" TO stiuser;
 
 -- Tabla: "STI".usuario
 

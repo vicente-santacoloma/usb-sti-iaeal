@@ -13,6 +13,16 @@
 
 <!DOCTYPE html>
 
+<logic:present name="failure">
+  <logic:equal name="failure" value="gestionEstadistica">
+    <script>
+      $(document).ready(function(){
+        alert("Debe introducir algun dato para generar su estadistica");
+      });
+    </script>
+  </logic:equal>  
+</logic:present>
+    
 <script>
     $(document).ready(function() {
         $("#periodos1").hide();
@@ -89,7 +99,7 @@
                 </div>
                 
                 <html:form method="POST" action="/BuscarEstadistica" onsubmit="return vacio()">                        
-                    <p>           
+                    <p>       
                     <div id="barraPaises">
                         <br> <br> <br>
                         1er Pais &nbsp;
@@ -848,7 +858,8 @@
                             <option>Otros</option>
                         </html:select>
 
-                    </div>      
+                    </div>  
+                    <br><br>
                     <fieldset id="raya" style="border:none; border-top: 2px solid #00627A; width: 520px;">
                     </fieldset>
                     <br>
@@ -866,26 +877,6 @@
                         <legend>Inicio de período</legend>
                         <html:select property="periodoIni1">
                             <option>  </option>
-                            <option> 1800 </option>
-                            <option> 1801 </option>
-                            <option> 1802 </option>
-                            <option> 1803 </option>
-                            <option> 1804 </option>
-                            <option> 1805 </option>
-                            <option> 1806 </option>
-                            <option> 1807 </option>
-                            <option> 1808 </option>
-                            <option> 1809 </option>
-                            <option> 1810 </option>
-                            <option> 1811 </option>
-                            <option> 1812 </option>
-                            <option> 1813 </option>
-                            <option> 1814 </option>
-                            <option> 1815 </option>
-                            <option> 1816 </option>
-                            <option> 1817 </option>
-                            <option> 1818 </option>
-                            <option> 1819 </option>
                             <option> 1820 </option>
                             <option> 1821 </option>
                             <option> 1822 </option>
@@ -1088,26 +1079,6 @@
                         <legend>Finalización de período</legend>
                         <html:select property="periodoFin1">
                             <option>  </option>
-                            <option> 1800 </option>
-                            <option> 1801 </option>
-                            <option> 1802 </option>
-                            <option> 1803 </option>
-                            <option> 1804 </option>
-                            <option> 1805 </option>
-                            <option> 1806 </option>
-                            <option> 1807 </option>
-                            <option> 1808 </option>
-                            <option> 1809 </option>
-                            <option> 1810 </option>
-                            <option> 1811 </option>
-                            <option> 1812 </option>
-                            <option> 1813 </option>
-                            <option> 1814 </option>
-                            <option> 1815 </option>
-                            <option> 1816 </option>
-                            <option> 1817 </option>
-                            <option> 1818 </option>
-                            <option> 1819 </option>
                             <option> 1820 </option>
                             <option> 1821 </option>
                             <option> 1822 </option>
@@ -1322,26 +1293,6 @@
                         <legend>Inicio de período</legend>
                         <html:select property="periodoIni2">
                             <option>  </option>
-                            <option> 1800 </option>
-                            <option> 1801 </option>
-                            <option> 1802 </option>
-                            <option> 1803 </option>
-                            <option> 1804 </option>
-                            <option> 1805 </option>
-                            <option> 1806 </option>
-                            <option> 1807 </option>
-                            <option> 1808 </option>
-                            <option> 1809 </option>
-                            <option> 1810 </option>
-                            <option> 1811 </option>
-                            <option> 1812 </option>
-                            <option> 1813 </option>
-                            <option> 1814 </option>
-                            <option> 1815 </option>
-                            <option> 1816 </option>
-                            <option> 1817 </option>
-                            <option> 1818 </option>
-                            <option> 1819 </option>
                             <option> 1820 </option>
                             <option> 1821 </option>
                             <option> 1822 </option>
@@ -1544,26 +1495,6 @@
                         <legend>Finalización de período</legend>
                         <html:select property="periodoFin2">
                             <option>  </option>
-                            <option> 1800 </option>
-                            <option> 1801 </option>
-                            <option> 1802 </option>
-                            <option> 1803 </option>
-                            <option> 1804 </option>
-                            <option> 1805 </option>
-                            <option> 1806 </option>
-                            <option> 1807 </option>
-                            <option> 1808 </option>
-                            <option> 1809 </option>
-                            <option> 1810 </option>
-                            <option> 1811 </option>
-                            <option> 1812 </option>
-                            <option> 1813 </option>
-                            <option> 1814 </option>
-                            <option> 1815 </option>
-                            <option> 1816 </option>
-                            <option> 1817 </option>
-                            <option> 1818 </option>
-                            <option> 1819 </option>
                             <option> 1820 </option>
                             <option> 1821 </option>
                             <option> 1822 </option>

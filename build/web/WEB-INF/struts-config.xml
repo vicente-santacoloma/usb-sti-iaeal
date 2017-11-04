@@ -45,7 +45,7 @@
       <action path="/enviar" name="Usuario" scope="request"
               type="servlets.enviar" validate="false">
         <forward name="success" path="principal"/>
-        <forward name="failure" path="estadistica.exito"/>
+        <forward name="failure" path="restaurar"/>
       </action>
      
      <action path="/recordar" type="servlets.recordar" scope="request">
@@ -110,8 +110,8 @@
       </action>
      
    <!-- COMPARAR -->
-      <action path="/comparar" name="Comparar" scope="request"
-              type="servlets.GestionComparar" validate="false">
+      <action path="/compararTratados" name="Comparar" scope="session"
+              type="servlets.GestionComparar" validate="true">
         <forward name="success" path="comparar.exito"/>
         <forward name="failure" path="comparar.form"/>
       </action>

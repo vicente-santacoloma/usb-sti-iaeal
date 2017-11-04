@@ -1,7 +1,7 @@
 <%-- 
     Document   : exitoComparar
     Created on : 09-mar-2013, 15:04:10
-    Author     : isaj
+    Author     : mary
 --%>
 
 <%@page contentType="text/html" pageEncoding="ISO-8859-1"%>
@@ -11,6 +11,7 @@
 <%@ taglib uri="http://struts.apache.org/tags-html" prefix="html" %>
 
 <!DOCTYPE html>
+
 
 <script type="text/javascript" src="https://www.google.com/jsapi"></script>
 
@@ -69,7 +70,11 @@
                                     <th id="anio2" scope="col" style="color:red"><bean:write name="Comparar" property="anoIni2"/> - <bean:write name="Comparar" property="anoFin2"/></th> 
                             </thead>
                             <tbody>
-                                <tr>                                    
+                                <tr>        
+                                    <th id ="nom1" ><bean:write name="Comparar" property="nombre1"/></th>
+                                    <th id ="nom2" ><bean:write name="Comparar" property="nombre2"/></th>
+                                </tr>
+                                <tr>
                                     <th id ="num1" ><bean:write name="Comparar" property="cantidad1"/></th>
                                     <th id ="num2" ><bean:write name="Comparar" property="cantidad2"/></th>
                                 </tr>

@@ -25,7 +25,8 @@ a{
 }
 
 #topMenu{
-  height: 30px;	
+  height: 30px;
+  margin-top: -19px;
 }
 
 #footer{
@@ -96,7 +97,7 @@ div.opcionesIzq{
   width: 130px;
   height: 30px;
   color: #FFFFFF;
-  font-family: symbol;
+  font-family: helvetica;
   font-size: 12px;
 }
 
@@ -109,7 +110,7 @@ div.opcionesDer{
   width: 130px;
   height: 30px;
   color: #FFFFFF;
-  font-family: symbol;
+  font-family: helvetica;
   font-size: 12px;
 }
 
@@ -121,7 +122,7 @@ div.opcionesVer{
   width: 130px;
   height: 30px;
   color: #FFFFFF;
-  font-family: symbol;
+  font-family: helvetica;
   font-size: 12px;
 }
 
@@ -254,6 +255,7 @@ div.inbox{
   border-bottom-left-radius: 0px;
   -moz-border-radius: 4px;
   -moz-border-radius-bottomleft: 0px;
+  
 }
 div.box a{
   float: left;

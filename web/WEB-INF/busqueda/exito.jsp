@@ -56,7 +56,7 @@ function verTratado(div){
 <logic:notPresent name="tratados">  <%--Si no hay tratados que mostrar--%>
     <div id="noHayTratados" style="margin: auto; font-size: 30px; font-family: Helvetica; color: grey;">
         </br>
-        La búsqueda no arrojó resultados
+        No existen tratados coincidentes con la búsqueda.
         </br>
         </br>
         <table> 
@@ -77,7 +77,7 @@ function verTratado(div){
     <logic:empty name="tratados">
         <div id="noHayTratados" style="margin: auto; font-size: 30px; font-family: Helvetica; color: grey;">
             </br>
-            La búsqueda no arrojó resultados
+            No existen tratados coincidentes con la búsqueda.
             </br>
             </br>
             <table> 
@@ -110,8 +110,8 @@ function verTratado(div){
                     <thead>
                         <tr>
                             <th> Título </th>
-                            <th> Pais ID </th>
-                            <th> Fecha Firma (DD/MM/AA) </th>
+                            <th> Pais </th>
+                            <th> Fecha Firma (MM/DD/AAAA) </th>
                         </tr>
                     </thead>
                     <tbody>

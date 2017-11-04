@@ -13,28 +13,44 @@
 
 <!DOCTYPE html>
 
+<logic:present name="failure">
+    <logic:equal name="failure" value="gestionEstadistica">
+        <script>
+            $(document).ready(function() {
+                alert("Debe introducir algun dato valido para generar su estadistica");
+            });
+        </script>
+    </logic:equal>  
+</logic:present>
+
+<logic:present name="failure">
+    <logic:equal name="failure" value="gestionEst">
+        <script>
+            $(document).ready(function() {
+                alert("El periodo final debe ser mayor al periodo inicial");
+            });
+        </script>
+    </logic:equal>  
+</logic:present>        
+
 <script>
     $(document).ready(function() {
-        $("#periodos1").hide();
-        $("#periodos2").hide();
-        $("#periodos3").hide();
-        $("#raya").hide();
-    
-        $("#botonPeriodo").click(function(){
-      
+
+        $("#botonPeriodo").click(function() {
+
             $("#botonPaises").show();
             $("#botonPeriodo").show();
             $("#botonAmbos").show();
-            
+
             $("#periodos1").show();
             $("#periodos2").show();
             $("#periodos3").show();
-            $("#barraPaises").hide();  
+            $("#barraPaises").hide();
             $("#raya").hide();
         });
-    
-        $("#botonPaises").click(function(){
-     
+
+        $("#botonPaises").click(function() {
+
             $("#periodos1").hide();
             $("#periodos2").hide();
             $("#periodos3").hide();
@@ -44,9 +60,9 @@
             $("#botonAmbos").show();
             $("#barraPaises").show();
         });
-        
-        $("#botonAmbos").click(function(){
-     
+
+        $("#botonAmbos").click(function() {
+
             $("#periodos1").show();
             $("#periodos2").show();
             $("#periodos3").show();
@@ -59,15 +75,6 @@
     });
 </script>
 
-<script>
-    function vacio(){
-        if ((periodoIni1 == 0) && (periodoFin1 == 0) && (periodoIni2 == 0) && (periodoFin2 == 0) &&
-            (codigo1.equals("Paises...")) && (codigo2.equals("Paises...")) && (codigo3.equals("Paises...")))  {
-            alert("No se ha introducido ningun valor");
-        }
-        return true;
-    } 
-</script>
 
 <style>
     .error{font-size: 10px;color: #cc0000; float:left; padding:0}
@@ -87,9 +94,9 @@
                     <button id="botonPaises" class="botonBusqueda">Solo Paises</button>
                     <button id="botonAmbos" class="botonBusqueda">Paises y Periodos</button>
                 </div>
-                
-                <html:form method="POST" action="/BuscarEstadistica" onsubmit="return vacio()">                        
-                    <p>           
+
+                <html:form method="POST" action="/BuscarEstadistica" >                        
+                    <p>       
                     <div id="barraPaises">
                         <br> <br> <br>
                         1er Pais &nbsp;
@@ -793,7 +800,7 @@
                             <option>San Cristobal y Nieves</option> 
                             <option>San Marino</option> 
                             <option>San Martin</option> 
-                            <option>San Pedro y Miquelon</option> 
+                            <option>San Pedro y Miquelon</option>colspan="2" 
                             <option>San Vicente y las Granadinas</option> 
                             <option>Santa Helena, A. y T.</option> 
                             <option>Santa Luca</option> 
@@ -848,23 +855,34 @@
                             <option>Otros</option>
                         </html:select>
 
-                    </div>      
+                    </div>  
+                    <br><br>
                     <fieldset id="raya" style="border:none; border-top: 2px solid #00627A; width: 520px;">
                     </fieldset>
                     <br>
-                    <table id ="periodos1" >
-                        <br><br>
+                    <table id ="periodos1" style="width: 550px;">
+                        
                         <tr>
-                            <td colspan="3">
+                        <td colspan="2">
                         <center>
-                            <legend style="color: #0099CC; font-size: 20px"><b> Período 1 </b></legend>   
+                            <legend style="color: #0099CC; font-size: 20px;">
+                                <b> Período 1 </b></legend>   
                         </center>
                         </td>
-                        </tr>                       
-                        <tr>
+                        <td colspan="2">
+                        <center>
+                            <legend style="color: #0099CC; font-size: 20px"><b> Período 2 </b></legend>   
+                        </center>
+                        </td>
+                        </tr> 
+
+                        
+                            
                             <td>
-                        <legend>Inicio de período</legend>
-                        <html:select property="periodoIni1">
+                            <legend  style="margin-left:15px">
+                                Inicio Período 1
+                            </legend>
+                        <html:select property="periodoIni1" style="margin-left:25px">
                             <option>  </option>
                             <option> 1820 </option>
                             <option> 1821 </option>
@@ -1064,9 +1082,9 @@
                             <html:errors property="periodoIni1"/>
                         </div>
                         </td>               
-                        <td>
-                        <legend>Finalización de período</legend>
-                        <html:select property="periodoFin1">
+                        <td >
+                        <legend  style="margin-left:-15px">Final Período 1</legend>
+                        <html:select property="periodoFin1" style="margin-left:-5px">
                             <option>  </option>
                             <option> 1820 </option>
                             <option> 1821 </option>
@@ -1266,21 +1284,17 @@
                             <html:errors property="periodoFin1"/>
                         </div>
                         </td>
-                        </tr>
-                    </table>
+                        
+                    
                     <br><br><br>
-                    <table id ="periodos2">
-                        <tr>
-                            <td colspan="3">
-                        <center>
-                            <legend style="color: #0099CC; font-size: 20px"><b> Período 2 </b></legend>   
-                        </center>
-                        </td>
-                        </tr>
-                        <tr>
+                    
+                                   
+                        
+                        
+                        
                             <td>
-                        <legend>Inicio de período</legend>
-                        <html:select property="periodoIni2">
+                        <legend  style="margin-left:20px">Inicio Período 2</legend>
+                        <html:select property="periodoIni2"  style="margin-left:28px">
                             <option>  </option>
                             <option> 1820 </option>
                             <option> 1821 </option>
@@ -1481,8 +1495,8 @@
                         </div>
                         </td>
                         <td>
-                        <legend>Finalización de período</legend>
-                        <html:select property="periodoFin2">
+                        <legend>Final Período 2</legend>
+                        <html:select property="periodoFin2"  style="margin-left:15px">
                             <option>  </option>
                             <option> 1820 </option>
                             <option> 1821 </option>
@@ -1678,18 +1692,21 @@
                             <option> 2012 </option>
                             <option> 2013 </option>
                         </html:select> 
+
+
                         <div class="error">
                             <html:errors property="periodoFin2"/>
                         </div>
                         </td>
-                        </tr>
-                    </table>  
+                        </table>
+                        
 
+                    
                     <br><br>
                     <div id="Generar" style="float: center;">
                         <html:submit> Generar </html:submit>
-                    </div>
-                    <br><br>
+                        </div>
+                        <br><br>
 
                 </html:form> 
             </div>

@@ -45,7 +45,7 @@
       <action path="/enviar" name="Usuario" scope="request"
               type="servlets.enviar" validate="false">
         <forward name="success" path="principal"/>
-        <forward name="failure" path="estadistica.exito"/>
+        <forward name="failure" path="restaurar"/>
       </action>
      
      <action path="/recordar" type="servlets.recordar" scope="request">
@@ -81,7 +81,7 @@
       <!-- ESTADISTICA -->
 
        <action path="/BuscarEstadistica" name="ClaseEstadistica" scope="session"
-              type="servlets.GestionEstadistica" validate="true">
+              type="servlets.GestionEstadistica" parameter="estadistica" validate="true">
         <forward name="success" path="estadistica.exito"/>
         <forward name="failure" path="estadistica.form"/>
       </action>
@@ -110,15 +110,15 @@
       </action>
      
    <!-- COMPARAR -->
-      <action path="/comparar" name="Comparar" scope="request"
-              type="servlets.GestionComparar" validate="false">
+      <action path="/compararTratados" name="Comparar" scope="request"
+              type="servlets.GestionComparar" validate="true" parameter="comparar">
         <forward name="success" path="comparar.exito"/>
         <forward name="failure" path="comparar.form"/>
       </action>
       
       <action path="/compararForm" name="Comparar" scope="request"
               type="servlets.GestionComparar" parameter="compararForm" validate="false">
-        <forward name="success" path="comparar.form"/>
+         <forward name="success" path="comparar.form"/>
       </action>
            
       <!-- USUARIO -->

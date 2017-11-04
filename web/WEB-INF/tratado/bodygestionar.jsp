@@ -77,7 +77,7 @@ function verTratado(div){
             <thead>
               <tr>
                 <th> Título </th>
-                <th> Pais ID </th>
+                <th> País </th>
                 <th> Fecha Firma (MM/DD/AA)</th>
               </tr>
             </thead>
@@ -94,7 +94,7 @@ function verTratado(div){
                     </div>
                   </td>
                   <td valign="top">
-                    <bean:write name="tratado" property="id"></bean:write>
+                    <bean:write name="tratado" property="paises[0]"></bean:write>
                   </td>
                   <td valign="top">
                     <bean:write name="tratado" property="firmaFecha"></bean:write>
